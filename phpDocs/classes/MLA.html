@@ -18,7 +18,10 @@
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Media Library Assistant</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Media%20Library%20Assistant.html"><i class="icon-folder-open"></i> Media Library Assistant</a></li>
+</ul>
 </li>
 <li class="dropdown" id="charts-menu">
 <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
@@ -64,6 +67,7 @@
 <li class="method public "><a href="#mla_inline_edit_action" title="mla_inline_edit_action :: Ajax handler for inline editing (quick and bulk edit)"><span class="description">Ajax handler for inline editing (quick and bulk edit)</span><pre>mla_inline_edit_action()</pre></a></li>
 <li class="method public "><a href="#mla_load_media_action" title="mla_load_media_action :: Redirect to Media/Assistant if Media/Library is hidden"><span class="description">Redirect to Media/Assistant if Media/Library is hidden</span><pre>mla_load_media_action()</pre></a></li>
 <li class="method public "><a href="#mla_parent_file_filter" title="mla_parent_file_filter :: Cleanup menus for Edit Tags/Categories page"><span class="description">Cleanup menus for Edit Tags/Categories page</span><pre>mla_parent_file_filter()</pre></a></li>
+<li class="method public "><a href="#mla_plugins_loaded_action" title="mla_plugins_loaded_action :: Load a plugin text domain"><span class="description">Load a plugin text domain</span><pre>mla_plugins_loaded_action()</pre></a></li>
 <li class="method public "><a href="#mla_render_admin_page" title='mla_render_admin_page :: Render the "Assistant" subpage in the Media section, using the list_table package'><span class="description">Render the "Assistant" subpage in the Media section, using the list_table package</span><pre>mla_render_admin_page()</pre></a></li>
 <li class="method public "><a href="#mla_screen_options_show_screen_filter" title="mla_screen_options_show_screen_filter :: Only show screen options on the table-list screen"><span class="description">Only show screen options on the table-list screen</span><pre>mla_screen_options_show_screen_filter()</pre></a></li>
 <li class="method public "><a href="#mla_set_screen_option_filter" title='mla_set_screen_option_filter :: Save the "Entries per page" option set by this user'><span class="description">Save the "Entries per page" option set by this user</span><pre>mla_set_screen_option_filter()</pre></a></li>
@@ -75,6 +79,7 @@
 <li class="method private "><a href="#_display_single_item" title="_display_single_item :: Display a single item sub page; prepare the form to
 change the meta data for a single attachment."><span class="description">Display a single item sub page; prepare the form to
 change the meta data for a single attachment.</span><pre>_display_single_item()</pre></a></li>
+<li class="method private "><a href="#_process_bulk_value" title="_process_bulk_value :: Process bulk edit area fields, which may contain a Content Template"><span class="description">Process bulk edit area fields, which may contain a Content Template</span><pre>_process_bulk_value()</pre></a></li>
 <li class="method private "><a href="#_restore_single_item" title="_restore_single_item :: Restore a single item from the Trash"><span class="description">Restore a single item from the Trash</span><pre>_restore_single_item()</pre></a></li>
 <li class="method private "><a href="#_trash_single_item" title="_trash_single_item :: Move a single item to Trash"><span class="description">Move a single item to Trash</span><pre>_trash_single_item()</pre></a></li>
 <li class="nav-header">
@@ -97,7 +102,6 @@ change the meta data for a single attachment.</span><pre>_display_single_item()<
 <li class="constant  "><a href="#MLA_ADMIN_SINGLE_MAP" title="MLA_ADMIN_SINGLE_MAP :: mla_admin_action value for mapping IPTC/EXIF metadata"><span class="description">mla_admin_action value for mapping IPTC/EXIF metadata</span><pre>MLA_ADMIN_SINGLE_MAP</pre></a></li>
 <li class="constant  "><a href="#MLA_ADMIN_SINGLE_RESTORE" title="MLA_ADMIN_SINGLE_RESTORE :: mla_admin_action value for restoring a single item from the trash"><span class="description">mla_admin_action value for restoring a single item from the trash</span><pre>MLA_ADMIN_SINGLE_RESTORE</pre></a></li>
 <li class="constant  "><a href="#MLA_ADMIN_SINGLE_TRASH" title="MLA_ADMIN_SINGLE_TRASH :: mla_admin_action value for moving a single item to the trash"><span class="description">mla_admin_action value for moving a single item to the trash</span><pre>MLA_ADMIN_SINGLE_TRASH</pre></a></li>
-<li class="constant  "><a href="#PLUGIN_NAME" title="PLUGIN_NAME :: Display name for this plugin"><span class="description">Display name for this plugin</span><pre>PLUGIN_NAME</pre></a></li>
 <li class="constant  "><a href="#STYLESHEET_SLUG" title="STYLESHEET_SLUG :: Slug for registering and enqueueing plugin style sheet"><span class="description">Slug for registering and enqueueing plugin style sheet</span><pre>STYLESHEET_SLUG</pre></a></li>
 </ul>
 </div>
@@ -275,6 +279,20 @@ going to the Edit Media screen.</p></p>
 <code>string</code>The updated top-level menu page</div>
 </div></div>
 </div>
+<a name="mla_plugins_loaded_action" id="mla_plugins_loaded_action"></a><div class="element clickable method public mla_plugins_loaded_action" data-toggle="collapse" data-target=".mla_plugins_loaded_action .collapse">
+<h2>Load a plugin text domain</h2>
+<pre>mla_plugins_loaded_action() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>The "add_action" for this function is in mla-plugin-loader.php, because the "initialize"
+function above doesn't run in time.
+Defined as public because it's an action.</p></p>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.60</td>
+</tr></table>
+</div></div>
+</div>
 <a name="mla_render_admin_page" id="mla_render_admin_page"></a><div class="element clickable method public mla_render_admin_page" data-toggle="collapse" data-target=".mla_render_admin_page .collapse">
 <h2>Render the "Assistant" subpage in the Media section, using the list_table package</h2>
 <pre>mla_render_admin_page() : void</pre>
@@ -433,6 +451,28 @@ change the meta data for a single attachment.</h2>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>message and/or HTML content</div>
+</div></div>
+</div>
+<a name="_process_bulk_value" id="_process_bulk_value"></a><div class="element clickable method private _process_bulk_value" data-toggle="collapse" data-target="._process_bulk_value .collapse">
+<h2>Process bulk edit area fields, which may contain a Content Template</h2>
+<pre>_process_bulk_value(integer $post_id, string $bulk_value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.80</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$post_id</h4>
+<code>integer</code><p>Current post ID</p></div>
+<div class="subelement argument">
+<h4>$bulk_value</h4>
+<code>string</code><p>Field value as entered</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Empty, or new value for the field</div>
 </div></div>
 </div>
 <a name="_restore_single_item" id="_restore_single_item"></a><div class="element clickable method private _restore_single_item" data-toggle="collapse" data-target="._restore_single_item .collapse">
@@ -657,18 +697,6 @@ change the meta data for a single attachment.</h2>
 </tr></table>
 </div></div>
 </div>
-<a name="PLUGIN_NAME" id="PLUGIN_NAME"> </a><div class="element clickable constant  PLUGIN_NAME" data-toggle="collapse" data-target=".PLUGIN_NAME .collapse">
-<h2>Display name for this plugin</h2>
-<pre>PLUGIN_NAME : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>since</th>
-<td>0.1</td>
-</tr></table>
-</div></div>
-</div>
 <a name="STYLESHEET_SLUG" id="STYLESHEET_SLUG"> </a><div class="element clickable constant  STYLESHEET_SLUG" data-toggle="collapse" data-target=".STYLESHEET_SLUG .collapse">
 <h2>Slug for registering and enqueueing plugin style sheet</h2>
 <pre>STYLESHEET_SLUG : string</pre>
@@ -688,7 +716,7 @@ change the meta data for a single attachment.</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a8</a> and<br>
-            generated on 2013-11-27T11:31:01-08:00.<br></footer></div>
+            generated on 2014-04-02T22:02:17-07:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -6,14 +6,18 @@
  * will the rest of the plugin be loaded and run.
  *
  * @package Media Library Assistant
- * @version 1.61
+ * @version 1.81
  */
 
 /*
 Plugin Name: Media Library Assistant
+Plugin URI: http://fairtradejudaica.org/media-library-assistant-a-wordpress-plugin/
 Description: Enhances the Media Library; powerful[mla_gallery], taxonomy support, IPTC/EXIF processing, bulk & quick edit actions and where-used reporting.
 Author: David Lingren
-Version: 1.61
+Text Domain: media-library-assistant
+Domain Path: /languages
+Version: 1.81
+Author URI: http://fairtradejudaica.org/our-story/staff/
 
 Copyright 2011-2013 David Lingren
 
@@ -47,7 +51,17 @@ else {
 	 */
 	define( 'MLA_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 }
- 
+
+if ( defined( 'MLA_PLUGIN_BASENAME' ) ) {
+	$mla_name_conflict_error_messages .= '<li>constant MLA_PLUGIN_BASENAME</li>';
+}
+else {
+	/**
+	 * Provides the plugin's directory name, relative to the plugins directory, without leading or trailing slashes.
+	 */
+	define( 'MLA_PLUGIN_BASENAME', dirname( plugin_basename( __FILE__ ) ) );
+}
+
 if ( defined( 'MLA_PLUGIN_URL' ) ) {
 	$mla_name_conflict_error_messages .= '<li>constant MLA_PLUGIN_URL</li>';
 }
@@ -79,6 +93,7 @@ $mla_name_conflict_candidates =
 		'MLA' => 'class',
 		'MLAData' => 'class',
 		'MLAEdit' => 'class',
+		'MLA_Checklist_Walker' => 'class',
 		'MLAMime' => 'class',
 		'MLAModal' => 'class',
 		'MLAObjects' => 'class',
